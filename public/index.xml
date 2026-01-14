@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cozy Corner Future</title>
+    <link>http://localhost:1313/cozy-corner-future/</link>
+    <description>Recent content on Cozy Corner Future</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Jan 2026 17:29:31 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/cozy-corner-future/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello</title>
+      <link>http://localhost:1313/cozy-corner-future/posts/hello/</link>
+      <pubDate>Wed, 14 Jan 2026 17:29:31 +0900</pubDate>
+      <guid>http://localhost:1313/cozy-corner-future/posts/hello/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/cozy-corner-future/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cozy-corner-future/about/</guid>
+      <description>&lt;p&gt;Who is bebechien&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
