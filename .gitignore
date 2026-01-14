@@ -1,0 +1,17 @@
+# Hugo Public and Cache directories
+/public/
+/resources/_gen/
+/assets/_gen/
+/data/*.lock
+
+# Vendor directory (if using Hugo Modules with vendoring)
+/_vendor/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE Files
+.vscode/
+.idea/
+*.swp
