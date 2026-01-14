@@ -2,44 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/cozy-corner-future/ko/posts/hello/</loc>
-    <lastmod>2026-01-14T17:29:42+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/cozy-corner-future/posts/hello/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="http://localhost:1313/cozy-corner-future/ja/posts/hello/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="http://localhost:1313/cozy-corner-future/ko/posts/hello/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/cozy-corner-future/ko/posts/</loc>
-    <lastmod>2026-01-14T17:29:42+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/cozy-corner-future/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="http://localhost:1313/cozy-corner-future/ja/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="http://localhost:1313/cozy-corner-future/ko/posts/"
-                />
-  </url><url>
     <loc>http://localhost:1313/cozy-corner-future/ko/</loc>
-    <lastmod>2026-01-14T17:29:42+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -54,23 +17,6 @@
                 rel="alternate"
                 hreflang="ko"
                 href="http://localhost:1313/cozy-corner-future/ko/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/cozy-corner-future/ko/about/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/cozy-corner-future/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="http://localhost:1313/cozy-corner-future/ja/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="http://localhost:1313/cozy-corner-future/ko/about/"
                 />
   </url><url>
     <loc>http://localhost:1313/cozy-corner-future/ko/categories/</loc>
