@@ -3,6 +3,7 @@
 /resources/_gen/
 /assets/_gen/
 /data/*.lock
+.hugo_build.lock
 
 # Vendor directory (if using Hugo Modules with vendoring)
 /_vendor/
