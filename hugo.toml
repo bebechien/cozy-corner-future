@@ -1,0 +1,27 @@
+baseURL = 'https://bebechien.github.io/cozy-corner-future/'
+languageCode = 'en-us'
+title = 'Cozy Corner Future'
+theme = 'digio'
+
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    contentDir = 'content/en'
+    weight = 10
+    title = 'Cozy Corner Future'
+
+  [languages.ko]
+    languageName = '한국어'
+    contentDir = 'content/ko'
+    weight = 20
+    title = '방구석 퓨처'
+
+  [languages.ja]
+    languageName = '日本語'
+    contentDir = 'content/ja'
+    weight = 30
+    title = 'すみっコの未来'
+
