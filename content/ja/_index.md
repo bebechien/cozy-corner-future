@@ -2,7 +2,7 @@
 世界一ラクな姿勢で迎える、明日のテクノロジー
 ```
 
-![title image](/images/title.png)
+![title image](/title.png)
 
 # 👋 ようこそ、「すみっコの未来」へ
 

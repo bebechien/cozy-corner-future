@@ -2,7 +2,7 @@
 title: 管理人紹介 (Who is bebechien?)
 ---
 
-![profile](/images/bebechien.png)
+![profile](/bebechien.png)
 
 ## 🌏 From Seoul to Tokyo
 

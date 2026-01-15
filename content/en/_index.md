@@ -2,7 +2,7 @@
 Greeting Tomorrow’s Technology in the World’s Most Comfortable Pose
 ```
 
-![title image](/images/title.png)
+![title image](/title.png)
 
 # 👋 Welcome to 'Cozy Corner Future'
 

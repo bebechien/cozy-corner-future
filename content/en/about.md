@@ -2,7 +2,7 @@
 title: About the Host (Who is bebechien?)
 ---
 
-![profile](/images/bebechien.png)
+![profile](/bebechien.png)
 
 ## 🌏 From Seoul to Tokyo
 
