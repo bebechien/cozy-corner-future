@@ -1,8 +1,10 @@
-+++
-title = "My First AI post"
-date = "2026-01-15"
-tags = ["AI"]
-+++
+---
+title: "My First AI Post"
+emoji: "🐕"
+type: "tech" # tech: 技術記事 / idea: アイデア
+topics: ["AI"]
+published: false
+---
 
 # Hello
 
