@@ -43,7 +43,27 @@ This site uses the [Terminal](https://github.com/panr/hugo-theme-terminal) theme
 Deployment is handled automatically via **GitHub Actions**.
 
 - Pushing to the `main` branch triggers the [Deploy to GitHub Pages](.github/workflows/deploy.yaml) workflow.
-- The site is built using `hugo --minify` and deployed to the `gh-pages` environment.
+- The site is built using `hugo --minify` and deployed to the `gh-pages` branch.
+
+## ✍️ Zenn Integration
+
+This repository automatically syncs Japanese content to [Zenn](https://zenn.dev/).
+
+### How it works
+
+1.  **Source of Truth:** Japanese posts are written in `content/ja/posts/`.
+2.  **Transformation:** The `scripts/sync_zenn.py` script converts Hugo Markdown files into Zenn-compatible format (mapping frontmatter, handling slugs, etc.).
+3.  **Automation:** The [Zenn Sync](.github/workflows/zenn-sync.yaml) workflow runs on pushes to `main`.
+    - It executes the transformation script.
+    - It prepares a Zenn-compatible directory structure (`zenn_dist`).
+    - It deploys the content of `zenn_dist` to the `zenn-sync` branch.
+    - You can connect your Zenn account to the `zenn-sync` branch of this repository.
+
+### Zenn-specific Directories
+
+- `articles/`: Destination for generated Zenn articles (used by the sync script).
+- `books/`: Placeholder for Zenn books.
+- `scripts/`: Contains the `sync_zenn.py` transformation script.
 
 ## 📂 Project Structure
 
