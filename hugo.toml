@@ -101,13 +101,13 @@ defaultContentLanguageInSubdir = true
     languageName = '한국어'
     contentDir = 'content/ko'
     weight = 20
-    title = '방구석 퓨처'
+    title = '방 구석 퓨처'
 
     [languages.ko.params]
       readMore = "Read more"
 
     [languages.ko.params.logo]
-      logoText = "방구석 퓨처"
+      logoText = "방 구석 퓨처"
       logoHomeLink = "/cozy-corner-future/ko/"
     
     [languages.ko.menu]
