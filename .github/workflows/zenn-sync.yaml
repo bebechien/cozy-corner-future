@@ -1,0 +1,48 @@
+name: Sync to Zenn
+
+on:
+  push:
+    paths:
+      - 'content/ja/**'  # Only trigger when Japanese content changes
+      - 'scripts/sync_zenn.py' # Or when you update the script
+    branches:
+      - main
+
+permissions:
+  contents: write # Required to push the generated files back
+
+jobs:
+  sync-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          pip install python-frontmatter toml
+
+      - name: Run Sync Script
+        run: |
+          python scripts/sync_zenn.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add the articles directory
+          git add articles/
+          
+          # Check if there are changes before committing to avoid errors
+          if git diff --staged --quiet; then
+            echo "No changes to sync."
+          else
+            git commit -m "chore: sync content to Zenn [skip ci]"
+            git push
+          fi
