@@ -1,27 +1,21 @@
-name: Deploy to GitHub Pages
+name: Deploy Hugo Site
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
+    branches:
+      - main  # Trigger when you push source code to main
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write # Required to push to the gh-pages branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true  # Fetch Hugo themes
+          submodules: true  # Fetch themes (like PaperMod)
           fetch-depth: 0
 
       - name: Setup Hugo
@@ -32,19 +26,12 @@ jobs:
 
       - name: Build
         run: hugo --minify
+        # This generates the static site into the './public' directory
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./public
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public  # The folder Hugo built
+          publish_branch: gh-pages  # The branch where HTML goes
+          commit_message: "deploy: update blog [skip ci]"
