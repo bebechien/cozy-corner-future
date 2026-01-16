@@ -5,6 +5,8 @@ on:
     paths:
       - 'content/ja/**'  # Only trigger when Japanese content changes
       - 'scripts/sync_zenn.py' # Or when you update the script
+      - 'static/images/**' # Or image updates
+      - 'assets/**'
     branches:
       - main
 
@@ -12,7 +14,7 @@ permissions:
   contents: write # Required to push the generated files back
 
 jobs:
-  sync-content:
+  deploy-to-zenn:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -27,22 +29,42 @@ jobs:
         run: |
           pip install python-frontmatter toml
 
-      - name: Run Sync Script
+      # 1. Prepare the Output Directory
+      # We create a clean folder 'zenn_dist' to hold exactly what Zenn needs.
+      - name: Prepare Zenn Distribution
         run: |
+          mkdir -p zenn_dist/articles
+          mkdir -p zenn_dist/books
+          mkdir -p zenn_dist/images
+
+          # Copy essential Zenn config
+          # (Ensure you have run 'npx zenn-cli init' once to get this file)
+          cp zenn.json zenn_dist/
+
+          # Copy images from Hugo's static folder to Zenn's images folder
+          # Hugo: static/images/foo.png -> Zenn: images/foo.png
+          if [ -d "static/images" ]; then
+            cp -r static/images/* zenn_dist/images/
+          fi
+
+      # 2. Run your Python Script
+      # *IMPORTANT*: Update your script to output to 'zenn_dist/articles'
+      - name: Generate Articles
+        run: |
+          # Passing the output directory as an argument or updating the script
+          # is cleaner, but for now we can just run it and move files if needed.
+          # Assuming your script writes to 'articles/' in root:
           python scripts/sync_zenn.py
 
-      - name: Commit and Push Changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Add the articles directory
-          git add articles/
-          
-          # Check if there are changes before committing to avoid errors
-          if git diff --staged --quiet; then
-            echo "No changes to sync."
-          else
-            git commit -m "chore: sync content to Zenn [skip ci]"
-            git push
-          fi
+          # Move generated articles to the dist folder
+          cp articles/*.md zenn_dist/articles/
+
+      # 3. Deploy to the 'zenn-sync' branch
+      - name: Deploy to Zenn Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./zenn_dist
+          publish_branch: zenn-sync  # The branch Zenn is now watching
+          commit_message: "chore: sync content from main [skip ci]"
+
