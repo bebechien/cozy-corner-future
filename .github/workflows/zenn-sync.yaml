@@ -37,6 +37,10 @@ jobs:
           mkdir -p zenn_dist/books
           mkdir -p zenn_dist/images
 
+          touch zenn_dist/articles/.keep
+          touch zenn_dist/books/.keep
+          touch zenn_dist/images/.keep
+
           # Copy essential Zenn config
           # (Ensure you have run 'npx zenn-cli init' once to get this file)
           #cp zenn.json zenn_dist/
