@@ -39,5 +39,7 @@ title: 管理人紹介 (Who is bebechien?)
 * **Email:** bebechien@google.com
 * **Github:** https://github.com/bebechien
 
+*お断り: 発言は個人の見解であり、所属組織とは関係ありません。*
+
 ---
 *"The future is already here - it's just not evenly distributed."*

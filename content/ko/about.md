@@ -35,5 +35,7 @@ title: 주인장 소개 (Who is bebechien?)
 * **Email:** bebechien@google.com
 * **Github:** https://github.com/bebechien
 
+*주의 사항: 이곳의 의견은 제 개인적인 견해이며, 제가 속한 조직의 공식 입장이 아님을 밝힙니다.*
+
 ---
 *"The future is already here - it's just not evenly distributed."*

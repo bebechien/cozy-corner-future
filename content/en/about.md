@@ -35,5 +35,7 @@ If you have any questions about the latest tech, games, or life in Tokyo, feel f
 * **Email:** bebechien@google.com
 * **Github:** https://github.com/bebechien
 
+*Disclaimer: The opinions stated here are my own, not necessarily those of my employer.*
+
 ---
 *"The future is already here - it's just not evenly distributed."*
