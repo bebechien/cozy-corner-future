@@ -39,7 +39,7 @@ jobs:
 
           # Copy essential Zenn config
           # (Ensure you have run 'npx zenn-cli init' once to get this file)
-          cp zenn.json zenn_dist/
+          #cp zenn.json zenn_dist/
 
           # Copy images from Hugo's static folder to Zenn's images folder
           # Hugo: static/images/foo.png -> Zenn: images/foo.png
