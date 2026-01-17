@@ -24,6 +24,14 @@ jobs:
 
       - name: Prepare Content (Fix Images & Metadata)
         run: python scripts/prepare_devto.py
+
+      - name: Deploy to DEV.to Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./devto_dist
+          publish_branch: devto-sync
+          commit_message: "chore: sync content from main [skip ci]"
       
       - name: Publish to DEV.to
         uses: sinedied/publish-devto@v2
@@ -32,5 +40,5 @@ jobs:
           devto_key: ${{ secrets.DEVTO_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           conventional_commits: true
-          branch: ${{ env.CURRENT_BRANCH }}
+          branch: devto-sync
           dry_run: false
