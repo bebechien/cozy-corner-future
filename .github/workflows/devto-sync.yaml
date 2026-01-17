@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: pip install python-frontmatter toml
 
+      - name: Prepare Distribution
+        run: |
+          mkdir -p devto_dist/articles
+          touch devto_dist/articles/.keep
+
       - name: Prepare Content (Fix Images & Metadata)
         run: python scripts/prepare_devto.py
 
@@ -40,7 +45,7 @@ jobs:
       - name: Publish to DEV.to
         uses: sinedied/publish-devto@v2
         with:
-          files: '*.md'
+          files: 'articles/**/*.md'
           devto_key: ${{ secrets.DEVTO_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           conventional_commits: true
