@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - 'devto-sync'
-    paths:
-      - "articles/**/*.md"
 
 jobs:
   deploy-to-devto:
