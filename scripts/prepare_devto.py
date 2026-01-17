@@ -5,7 +5,7 @@ import yaml
 
 # --- CONFIGURATION ---
 SOURCE_DIR = 'content/en/posts'
-DEST_DIR = 'devto_dist/pages'
+DEST_DIR = 'devto_dist/posts'
 # Your GitHub Pages URL (Source of Truth)
 GITHUB_PAGES_BASE = "https://bebechien.github.io/cozy-corner-future"
 
