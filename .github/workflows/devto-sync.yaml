@@ -40,7 +40,7 @@ jobs:
       - name: Publish to DEV.to
         uses: sinedied/publish-devto@v2
         with:
-          files: 'devto_dist/*.md'
+          files: '*.md'
           devto_key: ${{ secrets.DEVTO_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           conventional_commits: true
