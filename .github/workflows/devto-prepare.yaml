@@ -41,3 +41,13 @@ jobs:
           publish_dir: ./devto_dist
           publish_branch: devto-sync
           commit_message: "chore: sync content from main [skip ci]"
+
+      - name: Publish to DEV.to
+        uses: sinedied/publish-devto@v2
+        with:
+          devto_key: ${{ secrets.DEVTO_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: 'posts/**/*.md'
+          conventional_commits: true
+          branch: devto-sync
+
