@@ -60,8 +60,7 @@ def transform_post(file_path, filename):
         f.write("---\n")
         yaml.dump(zenn_metadata, f, allow_unicode=True, default_flow_style=False)
         f.write("---\n")
-        f.write(f"![cover]({GITHUB_PAGES_BASE}/{post['cover']})\n" if pos
-t.get('cover') else "\n")
+        f.write(f"![cover]({GITHUB_PAGES_BASE}/{post['cover']})\n" if post.get('cover') else "\n")
         f.write(content)
     
     print(f"✅ Synced: {filename} -> {slug}.md")
