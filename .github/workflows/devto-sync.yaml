@@ -3,7 +3,7 @@ name: DEV.to Publisher
 on:
   push:
     branches:
-      - devto-sync
+      - 'devto-sync'
     paths:
       - "articles/**/*.md"
 
@@ -21,5 +21,5 @@ jobs:
           devto_key: ${{ secrets.DEVTO_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           conventional_commits: true
-          branch: devto-sync
+          branch: 'devto-sync'
           dry_run: false
