@@ -3,7 +3,7 @@ name: DEV.to Publisher
 on:
   push:
     branches:
-      - 'devto-sync'
+      - devto-sync
 
 jobs:
   deploy-to-devto:
@@ -15,9 +15,7 @@ jobs:
       - name: Publish to DEV.to
         uses: sinedied/publish-devto@v2
         with:
-          files: 'articles/**/*.md'
           devto_key: ${{ secrets.DEVTO_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           conventional_commits: true
-          branch: 'devto-sync'
-          dry_run: false
+          branch: devto-sync
