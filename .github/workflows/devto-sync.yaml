@@ -1,0 +1,32 @@
+name: Sync to DEV.to
+
+on:
+  push:
+    paths:
+      - 'content/en/**' # Trigger only on English content
+      - 'scripts/prepare_devto.py'
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install python-frontmatter toml
+
+      - name: Prepare Content (Fix Images & Metadata)
+        run: python scripts/prepare_devto.py
+      
+      - name: Publish to DEV.to
+        uses: firecow/publish-devto@v1
+        with:
+          file_pattern: 'devto_dist/*.md'
+          api_key: ${{ secrets.DEVTO_API_KEY }}

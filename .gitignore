@@ -8,6 +8,9 @@
 # Velog Pre-Flight
 /velog_dist/
 
+# Dev.to Pre-Flight
+/devto_dist/
+
 # Vendor directory (if using Hugo Modules with vendoring)
 /_vendor/
 
