@@ -23,8 +23,6 @@ def transform_post(file_path, filename):
         # python-frontmatter automatically detects YAML (---) or TOML (+++)
         post = frontmatter.load(f)
 
-    print(post.keys())
-
     # 1. Map Hugo metadata to Zenn metadata
     zenn_metadata = {
         # Zenn requires specific fields
@@ -39,6 +37,21 @@ def transform_post(file_path, filename):
     # You might want to remove Hugo specific shortcodes if Zenn doesn't support them
     content = post.content
 
+    def image_replacer(match):
+        alt_text = match.group(1)
+        img_path = match.group(2)
+
+        if img_path.startswith('http'):
+            return match.group(0)
+
+        # Remove leading slash
+        clean_path = img_path.lstrip('/')
+
+        return f'![{alt_text}]({GITHUB_PAGES_BASE}/{clean_path})'
+
+    # Regex for standard Markdown images
+    content = re.sub(r'!\[(.*?)\]\((.*?)\)', image_replacer, content)
+
     # 3. Write to Zenn directory
     slug = zenn_slugify(filename)
     dest_path = os.path.join(DEST_DIR, f"{slug}.md")
@@ -47,6 +60,8 @@ def transform_post(file_path, filename):
         f.write("---\n")
         yaml.dump(zenn_metadata, f, allow_unicode=True, default_flow_style=False)
         f.write("---\n")
+        f.write(f"![cover]({GITHUB_PAGES_BASE}/{post['cover']})\n" if pos
+t.get('cover') else "\n")
         f.write(content)
     
     print(f"✅ Synced: {filename} -> {slug}.md")

@@ -13,14 +13,14 @@ def prepare_post(file_path, filename):
     with open(file_path, 'r', encoding='utf-8') as f:
         post = frontmatter.load(f)
 
-    # 1. METADATA TRANSFORMATION
-    # DEV.to uses 'published' (bool), Hugo uses 'draft' (bool)
-    is_draft = post.get('draft', False)
-    post['published'] = not is_draft
-    
-    # Remove 'draft' field to avoid confusion
-    if 'draft' in post.metadata:
-        del post.metadata['draft']
+    # 1. Map Hugo metatdata to DEV.to metadata
+    devto_metadata = {
+        'title': post.get('title', 'No Title'),
+        'description': post.get('description', ''),
+        'tags': post.get('tags', []),
+        'cover_image': cover_image_url = f"{GITHUB_PAGES_BASE}/{post['cover']}" if post.get('cover') else '',
+        'published': not post.get('draft', False),
+    }
 
     # Auto-generate Canonical URL (Critical for SEO)
     # Assumes Hugo URL structure: base/en/posts/filename/
@@ -30,10 +30,6 @@ def prepare_post(file_path, filename):
     
     canonical = f"{GITHUB_PAGES_BASE}/en/posts/{slug}/"
     post['canonical_url'] = canonical
-
-    # Ensure tags are a list
-    if 'tags' in post.metadata and isinstance(post.metadata['tags'], str):
-        post['tags'] = [t.strip() for t in post.metadata['tags'].split(',')]
 
     # 2. CONTENT TRANSFORMATION (Image Paths)
     # Converts ![alt](/images/foo.png) -> ![alt](https://.../images/foo.png)
@@ -53,12 +49,14 @@ def prepare_post(file_path, filename):
 
     # Regex for standard Markdown images
     content = re.sub(r'!\[(.*?)\]\((.*?)\)', image_replacer, content)
-    post.content = content
 
     # 3. WRITE TO DIST FOLDER
     output_path = os.path.join(DEST_DIR, filename)
     with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(frontmatter.dumps(post))
+        f.write("---\n")
+        yaml.dump(devto_metadata, f, allow_unicode=True, default_flow_style=False)
+        f.write("---\n")
+        f.write(content)
     
     print(f"✅ Formatted for DEV.to: {filename}")
 
