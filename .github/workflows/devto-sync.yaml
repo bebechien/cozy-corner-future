@@ -2,10 +2,10 @@ name: DEV.to Publisher
 
 on:
   push:
-    paths:
-      - "articles/**/*.md"
     branches:
       - devto-sync
+    paths:
+      - "articles/**/*.md"
 
 jobs:
   deploy-to-devto:
