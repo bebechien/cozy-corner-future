@@ -26,7 +26,11 @@ jobs:
         run: python scripts/prepare_devto.py
       
       - name: Publish to DEV.to
-        uses: firecow/publish-devto@v1
+        uses: sinedied/publish-devto@v2
         with:
-          file_pattern: 'devto_dist/*.md'
-          api_key: ${{ secrets.DEVTO_API_KEY }}
+          files: 'devto_dist/*.md'
+          devto_key: ${{ secrets.DEVTO_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          conventional_commits: true
+          branch: ${{ env.CURRENT_BRANCH }}
+          dry_run: false
