@@ -2,8 +2,11 @@ name: Publish to DEV.to
 on:
   push:
     paths:
-      - 'content/en/**' # Trigger only on English content
-      - 'scripts/prepare_devto.py'
+      - 'content/en/**' # Only trigger when English content changes
+      - 'scripts/sync_devto.py' # Or when you update the script
+      - 'scripts/sync_utils.py'
+      - 'static/images/**' # Or image updates
+      - 'assets/**'
     branches:
       - main
 
@@ -31,7 +34,7 @@ jobs:
           cp static/images/* devto_dist/posts/images
 
       - name: Prepare Content (Fix Images & Metadata)
-        run: python scripts/prepare_devto.py
+        run: python scripts/sync_devto.py
 
       - name: Deploy to DEV.to Branch
         uses: peaceiris/actions-gh-pages@v3
