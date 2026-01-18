@@ -7,7 +7,6 @@ on:
       - 'scripts/prepare_devto.py'
     branches:
       - main
-      - devto-sync
 
 permissions:
   contents: write
@@ -48,7 +47,7 @@ jobs:
         with:
           devto_key: ${{ secrets.DEVTO_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: 'posts/**/*.md'
+          files: 'devto_dist/posts/**/*.md'
           conventional_commits: true
-          branch: devto-sync
+          branch: main
 
