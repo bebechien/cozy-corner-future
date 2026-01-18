@@ -17,7 +17,7 @@ def run_devto_sync():
             'tags': post.get('tags', []),
             'cover_image': post.get('cover', ''),
             'published': not post.get('draft', False),
-            'canonical_url': f"{GITHUB_PAGES_BASE}/en/posts/{slug}/"
+            'canonical_url': f"{GITHUB_PAGES_BASE}/posts/{slug}/"
         }
 
         content = transform_image_urls(post.content)
