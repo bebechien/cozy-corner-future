@@ -65,10 +65,41 @@ This repository automatically syncs Japanese content to [Zenn](https://zenn.dev/
 - `books/`: Placeholder for Zenn books.
 - `scripts/`: Contains the `sync_zenn.py` transformation script.
 
+## 🦄 DEV.to Integration
+
+This repository automatically syncs English content to [DEV.to](https://dev.to/).
+
+### How it works
+
+1.  **Source of Truth:** English posts are written in `content/en/posts/`.
+2.  **Transformation:** The `scripts/sync_devto.py` script prepares the content (fixing image URLs to be absolute, mapping frontmatter).
+3.  **Automation:** The [DEV.to Sync](.github/workflows/devto-sync.yaml) workflow runs on pushes to `main`.
+    - It prepares the content in `devto_dist/`.
+    - It pushes the prepared content to the `devto-sync` branch.
+    - It uses the `sinedied/publish-devto` action to publish/update articles on DEV.to using the API.
+
+## 📝 Velog Integration
+
+For Korean content, a helper script is provided to prepare posts for [Velog](https://velog.io/).
+
+### How it works
+
+1.  **Source of Truth:** Korean posts are written in `content/ko/posts/`.
+2.  **Preparation:** Run the script manually:
+    ```bash
+    python scripts/prepare_velog.py
+    ```
+3.  **Result:** The script generates Velog-ready Markdown files in `velog_dist/`.
+    - Image paths are converted to absolute GitHub Pages URLs.
+    - A canonical link footer is added.
+    - Frontmatter is stripped (since Velog uses a UI for metadata).
+4.  **Publishing:** Copy the content from the generated file and paste it into the Velog editor.
+
 ## 📂 Project Structure
 
 - `assets/`: Media data for posts and pages.
 - `content/`: Markdown content for posts and pages (organized by language).
+- `scripts/`: Python scripts for content synchronization and transformation.
 - `themes/`: Contains the `terminal` theme submodule.
 - `hugo.toml`: Main configuration file.
 - `.github/workflows/`: CI/CD configuration for deployment.
