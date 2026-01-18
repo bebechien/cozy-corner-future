@@ -1,5 +1,5 @@
 ---
-cover_image: '''https://bebechien.github.io/cozy-corner-future/title.png'''
+cover_image: images/title.png
 description: ''
 published: true
 tags: []
