@@ -5,6 +5,9 @@
 /data/*.lock
 .hugo_build.lock
 
+# Python Script Cache
+/script/__pycache__
+
 # Velog Pre-Flight
 /velog_dist/
 
