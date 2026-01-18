@@ -52,4 +52,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: 'posts/**/*.md'
           conventional_commits: true
-          branch: main
+          branch: devto-sync
