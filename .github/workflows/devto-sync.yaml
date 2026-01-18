@@ -11,7 +11,7 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: write # Required to push the generated files back
 
 jobs:
   deploy-to-devto:
@@ -25,10 +25,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: pip install python-frontmatter toml
 
-      - name: Prepare Distribution
+      - name: Prepare DEV.to Distribution
         run: |
           mkdir -p devto_dist/posts/images
           cp static/images/* devto_dist/posts/images
