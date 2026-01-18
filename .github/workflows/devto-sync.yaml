@@ -1,21 +1,23 @@
 name: DEV.to Publisher
-
 on:
   push:
-    branches:
-      - devto-sync
+    branches: [devto-sync]
 
 jobs:
-  deploy-to-devto:
+  publish:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
 
-      - name: Publish to DEV.to
-        uses: sinedied/publish-devto@v2
-        with:
-          devto_key: ${{ secrets.DEVTO_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          conventional_commits: true
-          branch: devto-sync
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14
+
+    - name: Publish articles on dev.to
+      uses: sinedied/publish-devto@v2
+      with:
+        devto_key: ${{ secrets.DEVTO_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        files: 'posts/**/*.md'
+        branch: devto-sync
+        conventional_commits: true
