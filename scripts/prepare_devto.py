@@ -18,7 +18,7 @@ def prepare_post(file_path, filename):
         'title': post.get('title', 'No Title'),
         'description': post.get('description', ''),
         'tags': post.get('tags', []),
-        'cover_image': f"{GITHUB_PAGES_BASE}/{post['cover']}" if post.get('cover') else '',
+        'cover_image': f"'{GITHUB_PAGES_BASE}/{post['cover']}'" if post.get('cover') else '',
         'published': not post.get('draft', False),
     }
 
