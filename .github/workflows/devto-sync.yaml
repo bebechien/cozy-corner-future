@@ -29,6 +29,7 @@ jobs:
         run: |
           mkdir -p devto_dist/posts
           touch devto_dist/posts/.keep
+          cp static/images/* devto_dist/posts
 
       - name: Prepare Content (Fix Images & Metadata)
         run: python scripts/prepare_devto.py

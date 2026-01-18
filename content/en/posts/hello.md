@@ -1,7 +1,7 @@
 +++
 date = '2026-01-14T17:29:31+09:00'
 title = 'Hello'
-cover = 'title.png'
+cover = 'images/title.png'
 +++
 
 # Testing..
