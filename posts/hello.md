@@ -1,11 +1,13 @@
 ---
-canonical_url: https://bebechien.github.io/cozy-corner-future/en/posts/hello/
+canonical_url: 'https://bebechien.github.io/cozy-corner-future/en/posts/hello/'
 cover_image: images/hello.png
 description: ''
 published: true
 tags:
-- AI
+  - AI
 title: On the 'Joy of Creating' in the Age of AI
+id: 3179645
+date: '2026-01-18T03:38:43Z'
 ---
 # Why we still build, even when machines can do it faster.
 
