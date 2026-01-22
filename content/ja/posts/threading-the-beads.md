@@ -7,6 +7,7 @@ description = ""
 showFullContent = false
 readingTime = false
 hideComments = false
+emoji = "👨🏻‍💻"
 +++
 
 > **「三斗の玉も綴じてこそ宝（どんなに立派な玉も、糸でつなげなければ宝にはならない）」**（韓国の諺）
