@@ -1,14 +1,12 @@
 ---
-canonical_url: 'https://bebechien.github.io/cozy-corner-future/posts/threading-the-beads/'
+canonical_url: https://bebechien.github.io/cozy-corner-future/posts/threading-the-beads/
 cover_image: images/threading-the-beads.png
 description: ''
 published: true
 tags:
-  - Gemini
-  - AI
+- Gemini
+- AI
 title: 'Threading the Beads: Coding in the Era of AI'
-id: 3189576
-date: '2026-01-22T04:57:54Z'
 ---
 # Threading the Beads: Coding in the Era of AI
 
@@ -38,7 +36,7 @@ As Generative AI brings the cost of coding toward zero, there is a sentiment man
 
 **"In an era where anyone can be a creator, the 'What' (the idea) matters more than the 'How' (the implementation)."**
 
-I recently found a fascinating GitHub repository called **[whenwords](https://github.com/dbreunig/whenwords)**. Surprisingly, it is an open-source library with **zero lines of code—only "Specifications (Specs)."**
+I recently found a fascinating GitHub repository called **[whenwords](https://github.com/dbreunig/whenwords)**. Surprisingly, it is an open-source library with **zero lines of code—only "Specifications."**
 
 Inspired by this, I decided to start a similar experiment called **`history-of-video-game`**.
 
