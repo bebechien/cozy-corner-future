@@ -1,15 +1,13 @@
 ---
-canonical_url: 'https://bebechien.github.io/cozy-corner-future/posts/embeddinggemma-tuning-lab/'
+canonical_url: https://bebechien.github.io/cozy-corner-future/posts/embeddinggemma-tuning-lab/
 cover_image: images/embeddinggemma-tuning-lab.png
 description: ''
 published: true
 tags:
-  - EmbeddingGemma
-  - Gemma
-  - AI
+- EmbeddingGemma
+- Gemma
+- AI
 title: I Trained a Tiny AI to Judge My Hacker News Feed (And You Can Too)
-id: 3186321
-date: '2026-01-21T01:16:31Z'
 ---
 # It’s just too much noise.
 
