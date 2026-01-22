@@ -1,5 +1,5 @@
 ---
-emoji: 🤖
+emoji: 👨🏻‍💻
 published: true
 title: 玉を紡ぐ心で：AI時代のコーディング
 topics:
