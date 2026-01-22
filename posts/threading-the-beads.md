@@ -1,12 +1,14 @@
 ---
-canonical_url: https://bebechien.github.io/cozy-corner-future/posts/threading-the-beads/
+canonical_url: 'https://bebechien.github.io/cozy-corner-future/posts/threading-the-beads/'
 cover_image: images/threading-the-beads.png
 description: ''
 published: true
 tags:
-- Gemini
-- AI
+  - Gemini
+  - AI
 title: 'Threading the Beads: Coding in the Era of AI'
+id: 3189576
+date: '2026-01-22T04:57:54Z'
 ---
 # Threading the Beads: Coding in the Era of AI
 
