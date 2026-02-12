@@ -1,15 +1,13 @@
 ---
-canonical_url: 'https://bebechien.github.io/cozy-corner-future/posts/gemini-and-gemma/'
+canonical_url: https://bebechien.github.io/cozy-corner-future/posts/gemini-and-gemma/
 cover_image: images/gemini-and-gemma-en.png
 description: ''
 published: true
 tags:
-  - Gemini
-  - Gemma
-  - AI
+- Gemini
+- Gemma
+- AI
 title: 'Gemini versus Gemma: Still Confused?'
-id: 3209422
-date: '2026-01-30T06:24:10Z'
 ---
 When catching up on Google’s AI news, you hear **Gemini**, and then you hear **Gemma**. The names are so similar-like twin siblings-that it’s easy to scratch your head and wonder, *"What exactly is the difference?"*
 
