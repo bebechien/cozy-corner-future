@@ -1,13 +1,15 @@
 ---
-canonical_url: https://bebechien.github.io/cozy-corner-future/posts/building-your-first-rag-system/
+canonical_url: 'https://bebechien.github.io/cozy-corner-future/posts/building-your-first-rag-system/'
 cover_image: images/building-your-first-rag-system.png
 description: ''
 published: true
 tags:
-- EmbeddingGemma
-- Gemma
-- AI
+  - EmbeddingGemma
+  - Gemma
+  - AI
 title: Building Your First RAG System
+id: 3250290
+date: '2026-02-12T03:57:41Z'
 ---
 # 💎 From Mining Ores to Mining Insights
 
