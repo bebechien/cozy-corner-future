@@ -1,14 +1,9 @@
 name: Publish to DEV.to
 on:
-  push:
-    paths:
-      - 'content/en/**' # Only trigger when English content changes
-      - 'scripts/sync_devto.py' # Or when you update the script
-      - 'scripts/sync_utils.py'
-      - 'static/images/**' # Or image updates
-      - 'assets/**'
-    branches:
-      - main
+  workflow_run:
+    workflows: [Deploy Hugo Site]
+    types:
+      - completed
 
 permissions:
   contents: write # Required to push the generated files back
