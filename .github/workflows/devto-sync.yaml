@@ -1,7 +1,7 @@
 name: Publish to DEV.to
 on:
   workflow_run:
-    workflows: [Deploy Hugo Site]
+    workflows: [pages build and deployment]
     types:
       - completed
 
