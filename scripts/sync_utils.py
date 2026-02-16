@@ -3,7 +3,20 @@ import re
 import frontmatter
 import yaml
 
-GITHUB_PAGES_BASE = "https://bebechien.github.io/cozy-corner-future"
+def get_base_url():
+    """Extracts baseURL from hugo.toml."""
+    try:
+        with open('hugo.toml', 'r', encoding='utf-8') as f:
+            content = f.read()
+            # Supports baseURL = "url", baseURL = 'url', baseURL=url
+            match = re.search(r'baseURL\s*=\s*["\']?(.*?)["\']?\s*(?:#.*)?$', content, re.MULTILINE)
+            if match:
+                return match.group(1).strip().rstrip('/')
+    except FileNotFoundError:
+        pass
+    return "https://bebechien.github.io/cozy-corner-future"
+
+GITHUB_PAGES_BASE = get_base_url()
 
 def load_hugo_post(file_path):
     """Loads a Hugo markdown file and returns a post object."""

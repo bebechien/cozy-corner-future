@@ -1,41 +1,20 @@
 import os
-import re
-import frontmatter # pip install python-frontmatter
+from sync_utils import load_hugo_post, transform_image_urls, GITHUB_PAGES_BASE
 
 # Configuration
 SOURCE_DIR = 'content/ko/posts'
 DEST_DIR = 'velog_dist'
-# Your GitHub Pages URL (Where images are hosted)
-GITHUB_PAGES_URL = "https://bebechien.github.io/cozy-corner-future"
 
 def convert_to_velog(file_path, filename):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        post = frontmatter.load(f)
-
+    post = load_hugo_post(file_path)
     content = post.content
     
     # 1. FIX IMAGES: Convert relative paths to Absolute GitHub URLs
-    # Matches: ![alt](/images/foo.png) or ![alt](images/foo.png)
-    # Replaces with: ![alt](https://.../images/foo.png)
-    def image_replacer(match):
-        alt_text = match.group(1)
-        img_path = match.group(2)
-        
-        # If it's already an external URL, leave it alone
-        if img_path.startswith('http'):
-            return match.group(0)
-            
-        # Clean the path (remove leading slash)
-        clean_path = img_path.lstrip('/')
-        
-        return f'![{alt_text}]({GITHUB_PAGES_URL}/{clean_path})'
-
-    # Regex search for Markdown images
-    content = re.sub(r'!\[(.*?)\]\((.*?)\)', image_replacer, content)
+    content = transform_image_urls(content, GITHUB_PAGES_BASE)
 
     # 2. ADD FOOTER (Canonical Link)
     # Good for SEO: Tells Google the GitHub version is the original
-    original_url = f"{GITHUB_PAGES_URL}/ko/posts/{filename.replace('.md', '')}/"
+    original_url = f"{GITHUB_PAGES_BASE}/ko/posts/{filename.replace('.md', '')}/"
     footer = f"\n\n---\n*원문은 [제 개인 블로그]({original_url})에 게시된 글입니다.*"
     content += footer
 
