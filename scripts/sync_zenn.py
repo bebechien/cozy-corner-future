@@ -9,28 +9,30 @@ def zenn_slugify(filename):
     return slug if len(slug) >= 12 else f"{slug}-cozy-corner"
 
 def run_zenn_sync():
-    for filename in os.listdir(SOURCE_DIR):
-        if not filename.endswith('.md'): continue
-        
-        post = load_hugo_post(os.path.join(SOURCE_DIR, filename))
-        
-        # Zenn specific mapping
-        metadata = {
-            'title': post.get('title', 'No Title'),
-            'emoji': post.get('emoji', '🤖'),
-            'type': post.get('type', 'tech'),
-            'topics': post.get('tags', [])[:5],
-            'published': not post.get('draft', False),
-        }
+    with os.scandir(SOURCE_DIR) as entries:
+        for entry in entries:
+            if not entry.is_file() or not entry.name.endswith('.md'):
+                continue
 
-        content = transform_image_urls(post.content)
-        
-        # Add cover image if exists
-        if post.get('cover'):
-            content = f"![cover]({GITHUB_PAGES_BASE}/{post['cover']})\n\n" + content
+            post = load_hugo_post(entry.path)
 
-        save_post(os.path.join(DEST_DIR, f"{zenn_slugify(filename)}.md"), metadata, content)
-        print(f"✅ Zenn: {filename}")
+            # Zenn specific mapping
+            metadata = {
+                'title': post.get('title', 'No Title'),
+                'emoji': post.get('emoji', '🤖'),
+                'type': post.get('type', 'tech'),
+                'topics': post.get('tags', [])[:5],
+                'published': not post.get('draft', False),
+            }
+
+            content = transform_image_urls(post.content)
+
+            # Add cover image if exists
+            if post.get('cover'):
+                content = f"![cover]({GITHUB_PAGES_BASE}/{post['cover']})\n\n" + content
+
+            save_post(os.path.join(DEST_DIR, f"{zenn_slugify(entry.name)}.md"), metadata, content)
+            print(f"✅ Zenn: {entry.name}")
 
 if __name__ == "__main__":
     run_zenn_sync()

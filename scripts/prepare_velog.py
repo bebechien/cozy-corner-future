@@ -54,10 +54,10 @@ def main():
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
 
-    for filename in os.listdir(SOURCE_DIR):
-        if filename.endswith('.md'):
-            convert_to_velog(os.path.join(SOURCE_DIR, filename), filename)
+    with os.scandir(SOURCE_DIR) as entries:
+        for entry in entries:
+            if entry.is_file() and entry.name.endswith('.md'):
+                convert_to_velog(entry.path, entry.name)
 
 if __name__ == "__main__":
     main()
-
