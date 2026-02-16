@@ -5,24 +5,26 @@ SOURCE_DIR = 'content/en/posts'
 DEST_DIR = 'devto_dist/posts'
 
 def run_devto_sync():
-    for filename in os.listdir(SOURCE_DIR):
-        if not filename.endswith('.md'): continue
+    with os.scandir(SOURCE_DIR) as entries:
+        for entry in entries:
+            if not entry.is_file() or not entry.name.endswith('.md'):
+                continue
 
-        post = load_hugo_post(os.path.join(SOURCE_DIR, filename))
-        slug = post.metadata.get('url', filename.replace('.md', '')).strip('/')
-        
-        metadata = {
-            'title': post.get('title', 'No Title'),
-            'description': post.get('description', ''),
-            'tags': post.get('tags', []),
-            'cover_image': post.get('cover', ''),
-            'published': not post.get('draft', False),
-            'canonical_url': f"{GITHUB_PAGES_BASE}/posts/{slug}/"
-        }
+            post = load_hugo_post(entry.path)
+            slug = post.metadata.get('url', entry.name.replace('.md', '')).strip('/')
 
-        content = transform_image_urls(post.content)
-        save_post(os.path.join(DEST_DIR, filename), metadata, content)
-        print(f"✅ DEV.to: {filename}")
+            metadata = {
+                'title': post.get('title', 'No Title'),
+                'description': post.get('description', ''),
+                'tags': post.get('tags', []),
+                'cover_image': post.get('cover', ''),
+                'published': not post.get('draft', False),
+                'canonical_url': f"{GITHUB_PAGES_BASE}/posts/{slug}/"
+            }
+
+            content = transform_image_urls(post.content)
+            save_post(os.path.join(DEST_DIR, entry.name), metadata, content)
+            print(f"✅ DEV.to: {entry.name}")
 
 if __name__ == "__main__":
     run_devto_sync()
