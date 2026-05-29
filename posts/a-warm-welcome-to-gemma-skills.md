@@ -16,7 +16,7 @@ title: A Warm Welcome to `gemma-skills`
 
 To solve this, we put together a living repository called [**`gemma-skills`**](https://github.com/google-gemma/gemma-skills) (which we're releasing!). It's a curated, structured collection of developer *skills* designed to help both humans and agentic AI assistants build beautiful applications with Gemma models without the friction.
 
-Let's take a walk through what’s inside!
+Let's take a walk through what's inside!
 
 # The Heart of the Repo: `gemma-dev`
 
@@ -40,7 +40,7 @@ These skills are designed to be entirely harness-agnostic. They integrates into 
 
 ![Antigravity CLI skill](https://bebechien.github.io/cozy-corner-future/images/agy-skill.png)
 
-2. **Start Your Session:** Launch an interactive Antigravity session by running `agy` in your terminal. From there, you can query the agent in plain English regarding the Gemma ecosystem. Since `agy` leverages the `gemma-dev` skill, you’ll receive the most precise and up-to-date technical guidance available.
+2. **Start Your Session:** Launch an interactive Antigravity session by running `agy` in your terminal. From there, you can query the agent in plain English regarding the Gemma ecosystem. Since `agy` leverages the `gemma-dev` skill, you'll receive the most precise and up-to-date technical guidance available.
 
 ![show me the chat template of gemma](https://bebechien.github.io/cozy-corner-future/images/agy-example01.png)
 ![show me the chat template of gemma (result)](https://bebechien.github.io/cozy-corner-future/images/agy-example02.png)
@@ -60,6 +60,6 @@ Keep in mind that while the demo is functional, running a full-precision model v
 
 ![ascii-ani app](https://bebechien.github.io/cozy-corner-future/images/agy-ascii-ani-app.gif)
 
-I invite you to dive deeper into the vast world of Gemma and its surrounding ecosystem. You'll surely discover it’s an incredibly rewarding journey.
+I invite you to dive deeper into the vast world of Gemma and its surrounding ecosystem. You'll surely discover it's an incredibly rewarding journey.
 
 *Thank you for reading. If you build something cool with [`gemma-skills`](https://github.com/google-gemma/gemma-skills), let me know! Happy building!*
