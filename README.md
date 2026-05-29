@@ -27,6 +27,7 @@ This site uses the [Terminal](https://github.com/panr/hugo-theme-terminal) theme
     ```bash
     git clone --recurse-submodules https://github.com/bebechien/cozy-corner-future.git
     cd cozy-corner-future
+    git submodule update --init --recursive
     ```
 
 2.  **Run the Hugo server:**
