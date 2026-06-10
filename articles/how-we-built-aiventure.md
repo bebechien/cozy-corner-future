@@ -1,0 +1,85 @@
+---
+emoji: 🎮
+published: true
+title: AI搭載レトロダンジョン『AIventure』ができるまで
+topics:
+- Game Dev
+- Gemini
+- Gemma
+- AI
+type: tech
+---
+![cover](https://bebechien.github.io/cozy-corner-future/images/how-we-built-aiventure.png)
+
+冷たいスイカでもかじりながら（東京の夏が始まったばかりで、すっかりスイカに夢中なんです 🍉）、ちょっとしたお話に付き合っていただけませんか？ 私たちのような小さなチームが、ある突拍子もないアイデアを、どうやって命の吹き込まれたウェブゲームへと育て上げたのか、その舞台裏をお届けします。
+
+ここ数年のGoogle I/Oに参加された方なら、パンデミック期にGoogleの主要イベントを支えた仮想カンファレンス技術 *[Adventure](https://www.youtube.com/watch?v=hMjtFRqaTsI)* を覚えているかもしれません。広大で、美しいイラストに彩られ、みんなでワイワイ集まれる素敵な空間でした。ただ、システムとして少し重く、一回限りのイベント向けで、運営には人間のモデレーター陣が文字通り「総力戦」で挑む必要がありました。
+
+{{< youtube id="hMjtFRqaTsI" >}}
+
+数ヶ月前、私とトム（Tom）はこんな問いを自分たちに投げかけ始めました。*「もし、あのAdventureを全く新しい形で再定義したらどうなるだろう？」* 単発のカンファレンスではなく、開発者がお堅いドキュメントを読む代わりに、**「バイブス・コーディング（vibe coding）」** やゲームプレイを通じて生成AIの原則を学べるような、居心地の良いレトロな世界を作れないだろうか？
+
+![aiventure](https://bebechien.github.io/cozy-corner-future/images/aiventure.png)
+
+それが **[AIventure](https://developers.google.com/solutions/learn/aiventure)** の始まりの火花でした。ここからは、私たちが実際にこれをどうやって形にしていったのか、その軌跡をお話しします。
+
+# ステップ 1：Gemini Canvasでの落書きとプロトタイピング
+
+どんな素晴らしいゲームも、すべてはプロトタイプから始まります。AIventureの開発では、最初から複雑なエンジンコードをガリガリ書き始めたわけではありません。まずはGeminiの中で、コンセプトをあれこれいじくり回すところからスタートしました。
+
+私たちが求めていたのは、画面を左右に分割したUIレイアウトでした。UIパネルや全体の配置を管理する高機能なフロントエンドフレームワーク（**Angular**）のなかに、実際のゲームエンジンとしてレトロなキャンバスを描き出す **Phaser.JS** を組み込むという構成です。これは、前回のI/Oのデモで作った「[Living Canvas](https://developers.google.com/solutions/learn/living-canvas)」と同じアプローチですね。
+
+まずは様々なスタイルでシンプルな学習用パズルゲームを作ってみました。そして最終的に、見下ろし型（トップダウン）のレトロダンジョンというスタイルに落ち着きました。私たちが目指した世界の「バイブス（雰囲気）」に、これが一番しっくりきたからです。この時、トムが「昔のAdventureの精神とビジュアルを復活させたらどうだろう？」という素晴らしいアイデアを持ってきてくれたおかげで、世界観にパシッと一本、芯が通りました。
+
+> [Gemini Canvas](https://gemini.google/overview/canvas/) で作成した初期プロトタイプのスクリーンショット
+
+![screenshot01](https://bebechien.github.io/cozy-corner-future/images/aiventure-prototype-1.png)
+![screenshot02](https://bebechien.github.io/cozy-corner-future/images/aiventure-prototype-2.png)
+
+# ステップ 2：部屋のデザイン（バイブス・コーディングとエージェントロボット）
+
+土台となるロジックが動くことを確認すると、トムと私はさらに踏み込んだパズルの仕掛けをブレストし始めました。AIを単なる「鍵と鍵穴」のような単純なギミックにはしたくありませんでした。現代のLLM（大規模言語モデル）が持つ、あの魔法のようなワクワク感をちゃんと見せたかったのです。
+
+そうして生まれたのが、私たちお気に入りの2つの部屋です。
+
+1. **バイブス・コーディングの部屋（The Vibe Coding Room）：** プレイヤーに「AI支援によるUIデザイン」という概念に触れてもらいたいと考えました。この部屋に入ると、ゲーム内でiFrameのタブが開きます。プレイヤーが *「食べるボタンと寝るボタンしかない、ニワトリのためのToDoアプリを作って」* とプロンプトを投げると、AIがその場でウェブページを爆速で構築。プレイヤーはゲーム環境のなかで、自分のコードと画面のアップデートを即座に確認できます。
+
+![vibe coding room](https://bebechien.github.io/cozy-corner-future/images/aiventure-vibe-coding-room.png)
+
+2. **エージェント・パズル（The Agent Puzzle）：** 自然言語の指示を受け取り、Phaserのグリッド世界を実際にトコトコ動いて実行してくれる、小さなロボットのNPCキャラクターを登場させました。プレイヤーが *「行ってスイッチを切り替えてきて」* と言えば、モデルはツール呼び出し（Tool-calling）と推論を使って、その指示を具体的かつ段階的なゲーム内のアクションに分解して実行します。
+
+![agent puzzle](https://bebechien.github.io/cozy-corner-future/images/aiventure-agent-puzzle.png)
+
+# ステップ 3：GeminiからGemmaへ
+
+初期の構築とテストの段階では、クラウドのエンドポイントに依存していました。具体的には、Gemini APIを経由してプロンプトの要求をクラウドに飛ばし、プレイヤーのコマンド処理やコード生成を行っていました。完璧に動作してはいたのですが、私たちは現代のウェブアプリがどこまでできるのか、その限界をさらに押し広げてみたくなりました。このゲームを、完全に自己完結した、誰でも手軽に触れるものにしたかったのです。
+
+そこで登場するのが、**[Gemma 4](https://deepmind.google/models/gemma/)** です。
+
+私たちはGemma 4モデルを使ってパズルのテストを開始しました。モデルが関数呼び出し（Function-calling）やエージェントのワークフローをどれだけうまく処理できるかを追跡するため、さまざまなサイズ（E2BやE4B）やフレームワーク（Ollama、LM Studio、Transformers、Vertex AIなど）を試しながら実験を重ねました。
+
+# ステップ 4：MediaPipeで、すべてをブラウザへ
+
+パズルの最後のピースは「デプロイ」でした。クラウドのバックエンド環境を複雑に設定してもらったり、個人のAPIキーを入力させたりすることなく、Google Developersサイトを訪れる何百万人もの開発者に、どうやってこのAI搭載ゲームを届ければいいのか？
+
+その答えは、**モデルをユーザーのブラウザ内で、ローカルで直接動かすこと**でした。
+
+私たちは **MediaPipe** と、LiteRTチームが[事前変換してくれたフォーマット](https://huggingface.co/litert-community/gemma-4-E4B-it-litert-lm)を使用し、ウェブサイトのインターフェースからモデルを直接ホスティングして配信しました。クライアントサイドのウェブ技術を活用することで、すべての体験があなたのマシン上でローカルに実行されます。プレイヤーがNPCにプロンプトを投げたり、ゲーム内でコードを書いたりするとき、その推論は100%クライアント側で行われます。フロントエンドは、シンプルなイベントバス（Event Bus）を通じて、ブラウザに読み込まれたモデルにリクエストを投げます。
+
+自分でソースコードをじっくり読みたい開発者のために、ゲームループの向きをローカルでホストされたLM Studioのエンドポイントや [Vertex AI](https://github.com/bebechien/AIventure/blob/main/python-llm-service/main.py) へと簡単に切り替えられる[トグルスイッチ](https://github.com/bebechien/AIventure/blob/main/src/app/app.config.ts)も用意しておきました！
+
+# もうひとつだけ…
+
+現在のパズルに加えて、私たちはGemmaのマルチモーダル（Multimodal）機能の可能性も探っています。この作業は現在も進行中ですが、私たちの [GitHubリポジトリ](https://github.com/bebechien/AIventure) をクローンすれば、ご自身で実際に実験してみることができます。
+
+![draw puzzle](https://bebechien.github.io/cozy-corner-future/images/aiventure-draw-puzzle.png)
+
+# 次は、あなたは何を作りますか？
+
+AIventureの構築は、オールドスクールなゲームデザインと、現代のクライアントサイドAIを融合させる旅でした。レトロゲームがローカルのオープンLLMと会話し、ダンジョンのパズルの中で「バイブス・コーディング」をしている様子は、今見てもやっぱり魔法のように感じられます。
+
+進めることでアンロックできる開発者プロフィールバッジなどの機能も盛り込んで、デモを公開しました。もしソリューションをチェックしたい、アーキテクチャ全体を覗いてみたい、あるいはプロンプトをじっくり見てみたいという方は、こちらの公式ページを探索してみてください。
+
+👉 [AIventureソリューションをチェックする](https://developers.google.com/solutions/learn/aiventure)
+
+さあ、剣を構え、コンソールを開いて、皆様にも楽しい開発の旅が始まることをお祈りします！ 🍉🎮
