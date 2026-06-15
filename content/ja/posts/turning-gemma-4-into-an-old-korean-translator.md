@@ -7,7 +7,7 @@ description = ""
 showFullContent = false
 readingTime = false
 hideComments = false
-emoji = "✨"
+emoji = "🛠"
 +++
 
 古い本には、なんとも言えない独特の美しさがありますよね。色あせた紙の匂い、ページをめくるときの肌触り、そして何世代にもわたって受け継がれてきた物語。でも、朝鮮時代の小説『[洪吉童伝（ホン・ギルドンジョン）](https://ja.wikipedia.org/wiki/%E6%B4%AA%E5%90%89%E7%AB%A5)』のような古典韓国文学をいざ開いてみると、時間の流れが言葉に残した爪痕にすぐ気づかされます。
