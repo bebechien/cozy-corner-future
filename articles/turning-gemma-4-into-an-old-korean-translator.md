@@ -1,5 +1,5 @@
 ---
-emoji: ✨
+emoji: 🛠
 published: true
 title: Gemma 4を「古韓国語翻訳機」に変身させてみた
 topics:
