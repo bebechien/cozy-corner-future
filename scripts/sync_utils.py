@@ -36,6 +36,15 @@ def transform_image_urls(content, base_url=GITHUB_PAGES_BASE):
     # Matches ![alt](path)
     return re.sub(r'!\[(.*?)\]\((.*?)\)', image_replacer, content)
 
+def transform_youtube_links(content):
+    """
+    Converts Hugo youtube shortcodes like {{< youtube id="hMjtFRqaTsI" >}}
+    or {{< youtube hMjtFRqaTsI >}} to a standard YouTube absolute URL.
+    """
+    # Matches both id="VIDEO_ID" and just "VIDEO_ID" positional shortcodes
+    pattern = r'\{\{<?\s*youtube\s+(?:id=)?["\']?([a-zA-Z0-9_-]+)["\']?\s*>?\}\}'
+    return re.sub(pattern, r'https://www.youtube.com/watch?v=\1', content)
+
 def transform_relref_links(content, zenn_slugify_func):
     """
     Converts Hugo relative links like ({{< relref "posts/a-warm-welcome-to-gemma-skills.md" >}})
