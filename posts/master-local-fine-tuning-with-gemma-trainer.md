@@ -11,7 +11,7 @@ tags:
 - Local-AI
 title: Master Local Fine-Tuning with `gemma-trainer`
 ---
-Remember back in May when I introduced the [`gemma-skills`](https://github.com/google-gemma/gemma-skills) repository? It’s been rewarding to see how many of you have used [my previous post]({{< relref "posts/a-warm-welcome-to-gemma-skills.md" >}}) to streamline your workflows. (And hey, even if we aren't swimming in GitHub stars yet, I think we're off to a great start!😉)
+Remember back in May when I introduced the [`gemma-skills`](https://github.com/google-gemma/gemma-skills) repository? It's been rewarding to see how many of you have used [my previous post]({{< relref "posts/a-warm-welcome-to-gemma-skills.md" >}}) to streamline your workflows. (And hey, even if we aren't swimming in GitHub stars yet, I think we're off to a great start!😉)
 
 But as I built more custom applications, I kept hitting the same roadblock: **how to take a great base model and adapt it to my specific needs.**
 
@@ -21,7 +21,7 @@ Fine-tuning a model usually requires wading through complex setups and confusing
 
 `gemma-trainer` is your blueprint for training and adapting Gemma models on your local hardware. It handles the "how-to" so you can focus on your specific project goals, whether you are teaching a model a new domain or aligning its behavior to your preferences.
 
-# Why You’ll Use It
+# Why You'll Use It
 
 * **Faster, Lighter Training**: We recommend using **[Unsloth](http://unsloth.ai/)** for single-GPU training, making it fast and using less memory so it runs easily on personal hardware.
 
@@ -77,6 +77,6 @@ Finally, you will receive a comprehensive report summarizing the training perfor
 
 `gemma-trainer` is a living, structured document. Drop it into your agent's skills directory, and your AI assistant will immediately know how to guide you through the process.
 
-Check out the [repository](https://github.com/google-gemma/gemma-skills), add the skill to your toolbox, and let’s build something amazing!
+Check out the [repository](https://github.com/google-gemma/gemma-skills), add the skill to your toolbox, and let's build something amazing!
 
 Thanks for reading and happy training!
