@@ -54,7 +54,7 @@ Gemmaのエコシステムは動きが早く、新しいモデルやライブラ
 > プロンプトの例: `GradioとGemmaを使ってスマートホームシミュレーターを作って。家電操作の遅延を最小限にするために、Gemmaへのダイレクトな音声入力を使用して。`
 
 ![画像: スマートホーム](https://bebechien.github.io/cozy-corner-future/images/agy-smart-home.png)
-{{< youtube id="BAgLrR1_Ss0" >}}
+https://www.youtube.com/watch?v=BAgLrR1_Ss0
 
 ちなみに、このデモはしっかり動作しますが、`transformers` を使ってフル精度（Full-precision）のモデルをそのまま実行すると、少し動作が重く感じられるかもしれません。より快適な使い心地と最適なパフォーマンスを得るには、次の例のように *Ollama* や *LM Studio* などのバックエンドを介して、量子化（Quantized）されたバージョンを動かすことを個人的にはおすすめします。
 

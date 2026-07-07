@@ -11,7 +11,7 @@ type: tech
 ---
 ![cover](https://bebechien.github.io/cozy-corner-future/images/master-local-fine-tuning-with-gemma-trainer.png)
 
-去る5月に [`gemma-skills`](https://github.com/google-gemma/gemma-skills) リポジトリを紹介したのを覚えていますか？ [前回の記事]({{< relref "posts/a-warm-welcome-to-gemma-skills.md" >}})を参考にワークフローを効率化できた、という声をたくさんいただき、本当に嬉しく思っています（GitHubのスターがまだ山ほどついているわけではないけれど、最高のスタートを切れたんじゃないかな、なんて思っています！😉）。
+去る5月に [`gemma-skills`](https://github.com/google-gemma/gemma-skills) リポジトリを紹介したのを覚えていますか？ [前回の記事](https://zenn.dev/bebechien/articles/a-warm-welcome-to-gemma-skills)を参考にワークフローを効率化できた、という声をたくさんいただき、本当に嬉しく思っています（GitHubのスターがまだ山ほどついているわけではないけれど、最高のスタートを切れたんじゃないかな、なんて思っています！😉）。
 
 ただ、私自身もカスタムアプリケーションをいくつか作っていく中で、いつも同じ壁にぶつかっていました。それは、**「この素晴らしいベースモデルを、どうやって自分の特定のニーズに合わせて最適化するか」** という問題です。
 
@@ -35,7 +35,7 @@ type: tech
 
 # 具体的なユースケース
 
-実際の動きをイメージするために、[前回の記事]({{< relref "posts/turning-gemma-4-into-an-old-korean-translator.md" >}})でGemma 4を韓国古典文学の専門翻訳家に変身させたときのことを思い出してみましょう。`gemma-trainer` があれば、面倒なパイプラインを自分で組み立てる必要はありません。AIエージェントにこう話しかけるだけでOKです。
+実際の動きをイメージするために、[前回の記事](https://zenn.dev/bebechien/articles/turning-gemma-4-into-an-old-korean-translator)でGemma 4を韓国古典文学の専門翻訳家に変身させたときのことを思い出してみましょう。`gemma-trainer` があれば、面倒なパイプラインを自分で組み立てる必要はありません。AIエージェントにこう話しかけるだけでOKです。
 
 > **「dataset bebechien/HongGildongJeon で Gemma 4 E2B をファインチューニングして」**
 
