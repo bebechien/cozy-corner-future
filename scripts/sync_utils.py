@@ -36,6 +36,25 @@ def transform_image_urls(content, base_url=GITHUB_PAGES_BASE):
     # Matches ![alt](path)
     return re.sub(r'!\[(.*?)\]\((.*?)\)', image_replacer, content)
 
+def transform_relref_links(content, zenn_slugify_func):
+    """
+    Converts Hugo relative links like ({{< relref "posts/a-warm-welcome-to-gemma-skills.md" >}})
+    to absolute Zenn URLs.
+    """
+    def relref_replacer(match):
+        # Extracts 'a-warm-welcome-to-gemma-skills.md' from the path
+        full_path = match.group(1)
+        filename = os.path.basename(full_path)
+
+        # Convert filename to your Zenn slug format
+        zenn_slug = zenn_slugify_func(filename)
+
+        return f"https://zenn.dev/bebechien/articles/{zenn_slug}"
+
+    # Matches {{< relref "..." >}} or {{% relref "..." %}}
+    pattern = r'\{\{<?\s*relref\s*["\'](.*?)["\']\s*>?\}\}'
+    return re.sub(pattern, relref_replacer, content)
+
 def save_post(dest_path, metadata, content):
     """Writes the transformed post with new YAML frontmatter."""
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)

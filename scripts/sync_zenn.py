@@ -1,5 +1,5 @@
 import os
-from sync_utils import load_hugo_post, transform_image_urls, save_post, GITHUB_PAGES_BASE
+from sync_utils import load_hugo_post, transform_image_urls, transform_relref_links, save_post, GITHUB_PAGES_BASE
 
 SOURCE_DIR = 'content/ja/posts'
 DEST_DIR = 'zenn_dist/articles'
@@ -26,6 +26,8 @@ def run_zenn_sync():
             }
 
             content = transform_image_urls(post.content)
+
+            content = transform_relref_links(content, zenn_slugify)
 
             # Add cover image if exists
             if post.get('cover'):
