@@ -1,7 +1,8 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/hello/
 cover_image: images/hello.png
-description: ''
+description: In the era of AI, where machines can do things faster, what is the value
+  of human creativity?
 published: true
 tags:
 - AI

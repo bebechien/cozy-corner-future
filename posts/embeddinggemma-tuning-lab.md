@@ -1,7 +1,8 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/embeddinggemma-tuning-lab/
 cover_image: images/embeddinggemma-tuning-lab.png
-description: ''
+description: Learn how to fine-tune EmbeddingGemma to create a personalized news filtering
+  AI that understands your unique taste.
 published: true
 tags:
 - EmbeddingGemma

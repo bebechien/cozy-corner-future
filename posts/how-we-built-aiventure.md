@@ -1,7 +1,8 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/how-we-built-aiventure/
 cover_image: images/how-we-built-aiventure.png
-description: ''
+description: The behind-the-scenes story of how we built the web game『AIventure』,
+  a fun way to learn Gemini programming using Gemini Canvas and Gemma 4.
 published: true
 tags:
 - Game Dev

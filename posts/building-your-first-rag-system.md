@@ -1,7 +1,8 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/building-your-first-rag-system/
 cover_image: images/building-your-first-rag-system.png
-description: ''
+description: Learn how to build a private, local RAG system using Gemma and EmbeddingGemma
+  with Ollama and AnythingLLM.
 published: true
 tags:
 - EmbeddingGemma

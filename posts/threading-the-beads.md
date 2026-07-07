@@ -1,7 +1,8 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/threading-the-beads/
 cover_image: images/threading-the-beads.png
-description: ''
+description: In an era where AI can generate code instantly, the true value of a developer
+  lies in creativity and intent.
 published: true
 tags:
 - Gemini

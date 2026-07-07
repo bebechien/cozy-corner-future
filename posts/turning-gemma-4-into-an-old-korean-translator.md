@@ -1,7 +1,7 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/turning-gemma-4-into-an-old-korean-translator/
 cover_image: images/tuning-gemma-4-into-an-old-korean-translator.png
-description: ''
+description: How I fine-tuned Gemma 4 to translate Classical Korean into Modern Korean.
 published: true
 tags:
 - Fine-tuning

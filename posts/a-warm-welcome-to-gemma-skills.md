@@ -1,7 +1,8 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/a-warm-welcome-to-gemma-skills/
 cover_image: images/gemma-skills.png
-description: ''
+description: Learn how to use `gemma-skills`, a curated collection of developer skills
+  for building with Gemma models.
 published: true
 tags:
 - Gemma

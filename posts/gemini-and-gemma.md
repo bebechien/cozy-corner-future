@@ -1,7 +1,7 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/gemini-and-gemma/
 cover_image: images/gemini-and-gemma-en.png
-description: ''
+description: Learn the difference between Gemini and Gemma with a fun ramen analogy.
 published: true
 tags:
 - Gemini

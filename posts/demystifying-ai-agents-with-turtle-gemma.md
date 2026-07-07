@@ -1,7 +1,8 @@
 ---
 canonical_url: https://bebechien.github.io/cozy-corner-future/posts/demystifying-ai-agents-with-turtle-gemma/
 cover_image: images/demystifying-ai-agents-with-turtle-gemma.png
-description: ''
+description: How I made a retro turtle graphics drawing app using Gemma 4, and how
+  it taught me about AI agents.
 published: true
 tags:
 - Turtle
