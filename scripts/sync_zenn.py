@@ -6,6 +6,9 @@ DEST_DIR = 'zenn_dist/articles'
 
 def zenn_slugify(filename):
     slug = os.path.splitext(filename)[0]
+    if len(slug)>50:
+        slug = slug[:50]
+
     return slug if len(slug) >= 12 else f"{slug}-cozy-corner"
 
 def run_zenn_sync():
