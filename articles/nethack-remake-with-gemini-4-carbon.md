@@ -28,14 +28,14 @@ https://www.youtube.com/watch?v=4KfezQB4aW0
 - **Antigravity のインストールとモデルアクセス権の確保:** プロジェクト開発プラットフォームである Antigravity をインストールし、優れたコーディング能力を誇る Gemini 4 Carbon モデルのアクセス権を用意します。
 - **3Dアセット自動化環境の構築:** 3Dモデリング用ソフトの Blender をインストールし、MCP (Model Context Protocol) アドオンを追加した後、Antigravity に Blender MCP サーバーを接続します。
 
-> **📌 ちょっとした注意点！**\
+> **📌 ちょっとした注意点！** \
 公開されているコードリポジトリには、それぞれ独自のライセンス条項があります。個人の学習目的で自由に試すのは問題ありませんが、商用利用したり最終的な成果物を一般公開したりする前には、必ずプロジェクトのライセンスを確認してください！
 
 それでは、上で触れた準備事項を順番にひとつずつ見ていきましょう。
 
 # 💻 Antigravity のインストールとモデルアクセス権
 
-Antigravity のインストール - https://antigravity.google\
+Antigravity のインストール - https://antigravity.google \
 Gemini 4 Carbon は [Google AI Ultra プラン](https://one.google.com/about/google-ai-plans/)にご加入いただくとすぐにご利用いただけます。
 
 すべての準備が整ったら Antigravity で新規プロジェクトを作成し、以下のように Gemini 4 Carbon を使用できる状態に設定します。
@@ -48,8 +48,8 @@ Gemini 4 Carbon は [Google AI Ultra プラン](https://one.google.com/about/goo
 
 なぜ別の MCP サーバーが必要なのでしょうか？実はこの設定がなくても Carbon を活用して 3D ゲームを開発する分にはまったく問題ありません。しかし MCP を接続すると、3D アセット生成に特化した機能を活用できるようになり、より完成度の高い成果物を得ることができます。すでに使用している他のサーバーがあればそれを活用しても良いですし、初めて触れる方は以下の案内を参考に Blender MCP サーバーを接続してみてください。
 
-Blender のインストール - https://www.blender.org\
-Blender MCP Server のインストール - https://projects.blender.org/lab/blender_mcp/wiki/Setup\
+Blender のインストール - https://www.blender.org \
+Blender MCP Server のインストール - https://projects.blender.org/lab/blender_mcp/wiki/Setup \
 Blender MCP Server Add-on のインストール - https://www.blender.org/lab/mcp-server/#add-on
 
 最後に Antigravity に Blender MCP サーバーを追加するには、設定ファイルを直接編集する必要があります。
