@@ -91,7 +91,9 @@ Once your game implementation is rock solid, try creating a 1980s VHS-style prom
 Create a promotion video with 80s vibe with VHS tape artifacts. Use Lyria 3.5 to generate background music. Use Gemini 3.8 Flash TTS to generate promotional messages.
 ```
 
-Just remember to [set your GEMINI_API_KEY](https://aistudio.google.com/docs/api-key) beforehand so the agent can access the corresponding model in your local environment.
+Please note that for the agent to access the model in a local environment, you must either [set GEMINI_API_KEY](https://aistudio.google.com/docs/api-key) in advance or install the Gemini API plugin from Antigravity's Marketplace.
+
+![Antigravity Plugin](images/nethack-agy-plugin.png)
 
 And that covers the entire process of making the promo video shown earlier!
 

@@ -91,7 +91,9 @@ Swarm 기능을 사용하면 서브 에이전트(Subagent)들이 생성되어 �
 Create a promotion video with 80s vibe with VHS tape artifacts. Use Lyria 3.5 to generate background music. Use Gemini 3.8 Flash TTS to generate promotional messages.
 ```
 
-단, 에이전트가 로컬 환경에서 해당 모델에 접근할 수 있도록 [GEMINI_API_KEY를 미리 설정](https://aistudio.google.com/docs/api-key)해야 한다는 점을 유의해 주세요.
+단, 에이전트가 로컬 환경에서 해당 모델에 접근할 수 있도록 [GEMINI_API_KEY를 미리 설정](https://aistudio.google.com/docs/api-key)하거나, Antigravity의 Marketplace에서 Gemini API plugin을 설치해야 한다는 점을 유의해 주세요.
+
+![Antigravity Plugin](images/nethack-agy-plugin.png)
 
 이로써 처음에 보셨던 프로모션 동영상 제작 과정까지 모두 살펴보았습니다.
 
