@@ -29,14 +29,14 @@ Curious about how a text-based classic turned into a modern 3D action RPG? Follo
 - **Install Antigravity & Get Model Access:** Install the project development platform Antigravity, and secure access to the Gemini 4 Carbon model, which offers exceptional coding capabilities.
 - **Set Up 3D Asset Automation Environment:** Install Blender for 3D modeling, add the MCP (Model Context Protocol) add-on, and connect the Blender MCP server to Antigravity.
 
-> **📌 A Quick Note!**\
+> **📌 A Quick Note!** \
 Public code repositories come with their own specific licensing terms. While you are generally free to experiment for personal learning, always check the project's license before using it commercially or sharing your final result publicly!
 
 Now, let's go over the preparation steps one by one.
 
 # 💻 Installing Antigravity & Accessing the Model
 
-Install Antigravity - https://antigravity.google\
+Install Antigravity - https://antigravity.google \
 You can use Gemini 4 Carbon right away by subscribing to the [Google AI Ultra plan](https://one.google.com/about/google-ai-plans/).
 
 Once you're all set up, create a new project in Antigravity and configure it to use Gemini 4 Carbon, as shown below.
@@ -49,8 +49,8 @@ Shall we move on to the next step?
 
 Why do we need a separate MCP server? Actually, you can develop 3D games using Carbon just fine without this setup. However, connecting MCP unlocks features specialized for 3D asset generation, resulting in a much more polished product. If you already use another server, feel free to use that; otherwise, follow the instructions below to connect the Blender MCP server.
 
-Install Blender - https://www.blender.org\
-Install Blender MCP Server - https://projects.blender.org/lab/blender_mcp/wiki/Setup\
+Install Blender - https://www.blender.org \
+Install Blender MCP Server - https://projects.blender.org/lab/blender_mcp/wiki/Setup \
 Install Blender MCP Server Add-on - https://www.blender.org/lab/mcp-server/#add-on
 
 Finally, to add the Blender MCP server to Antigravity, you need to edit the configuration file manually.
