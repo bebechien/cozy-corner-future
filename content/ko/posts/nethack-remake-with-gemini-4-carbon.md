@@ -26,14 +26,14 @@ hideComments = false
 - **Antigravity 설치 및 모델 접근 권한 확보:** 프로젝트 개발 플랫폼인 Antigravity를 설치하고, 뛰어난 코딩 능력을 지원하는 Gemini 4 Carbon 모델의 접근 권한을 준비합니다.
 - **3D 에셋 자동화 환경 구축:** 3D 모델링용 Blender를 설치하고, MCP(Model Context Protocol) 애드온을 추가한 뒤 Antigravity에 Blender MCP 서버를 연결합니다.
 
-> **📌 잠깐만요!**\
+> **📌 잠깐만요!** \
 공개 코드 저장소마다 고유한 라이선스 약관이 적용됩니다. 개인 학습 목적으로 자유롭게 실험해 보시는 것은 좋지만, 상업적으로 이용하거나 최종 결과물을 외부에 공개하기 전에는 반드시 해당 프로젝트의 라이선스를 먼저 확인해 주세요!
 
 그럼 위에서 언급한 준비 사항을 순서대로 하나씩 살펴보겠습니다.
 
 # 💻 Antigravity 설치 및 모델 접근권
 
-Antigravity 설치 - https://antigravity.google\
+Antigravity 설치 - https://antigravity.google \
 Gemini 4 Carbon은 [Google AI Ultra 플랜](https://one.google.com/about/google-ai-plans/)에 가입하시면 바로 이용하실 수 있습니다.
 
 모든 준비를 마치셨다면 Antigravity에서 새 프로젝트를 생성하고, 아래와 같이 Gemini 4 Carbon을 사용할 수 있는 상태로 설정합니다.
@@ -46,8 +46,8 @@ Gemini 4 Carbon은 [Google AI Ultra 플랜](https://one.google.com/about/google-
 
 왜 별도의 MCP 서버가 필요할까요? 사실 이 설정이 없어도 Carbon을 활용해 3D 게임을 개발하는 데는 전혀 무리가 없습니다. 하지만 MCP를 연결하면 3D 에셋 생성에 특화된 기능들을 활용할 수 있어 훨씬 완성도 높은 결과물을 얻을 수 있습니다. 기존에 사용 중인 다른 서버가 있다면 그것을 활용하셔도 좋으며, 처음 접하신다면 아래 안내를 따라 Blender MCP 서버를 연결해 보세요.
 
-Blender 설치 - https://www.blender.org\
-Blender MCP Server 설치 - https://projects.blender.org/lab/blender_mcp/wiki/Setup\
+Blender 설치 - https://www.blender.org \
+Blender MCP Server 설치 - https://projects.blender.org/lab/blender_mcp/wiki/Setup \
 Blender MCP Server Add-on 설치 - https://www.blender.org/lab/mcp-server/#add-on
 
 마지막으로 Antigravity에 Blender MCP 서버를 추가하려면 설정 파일을 직접 수정해야 합니다.
