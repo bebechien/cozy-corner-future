@@ -300,6 +300,9 @@ pre code {
   padding: 0;
   font-size: inherit;
   border: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: hidden;
 }
 
 sup {
