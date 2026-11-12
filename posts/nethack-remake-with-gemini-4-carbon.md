@@ -1,16 +1,16 @@
 ---
-canonical_url: https://bebechien.github.io/cozy-corner-future/posts/nethack-remake-with-gemini-4-carbon/
+canonical_url: 'https://bebechien.github.io/cozy-corner-future/posts/nethack-remake-with-gemini-4-carbon/'
 cover_image: images/nethack-remake-with-gemini-4-carbon.png
-description: Learn how to remake the classic roguelike NetHack into a 3D action RPG
-  using Gemini 4 Carbon and Blender MCP, complete with practical tips and process
-  insights.
+description: 'Learn how to remake the classic roguelike NetHack into a 3D action RPG using Gemini 4 Carbon and Blender MCP, complete with practical tips and process insights.'
 published: true
 tags:
-- Game
-- Gemini
-- Blender
-- MCP
+  - Game
+  - Gemini
+  - Blender
+  - MCP
 title: NetHack Remake with Gemini 4 Carbon
+id: 5020545
+date: '2026-11-12T04:10:49Z'
 ---
 Hello everyone! Today, I’d like to share my experience testing out Gemini 4 Carbon. What did I build? I remade the classic 1987 retro roguelike game [NetHack](https://www.nethack.org/) into a modern 3D action RPG. The deep gameplay of the original dungeon crawler (originally rendered only in text and ASCII graphics) inspired countless games that followed, including Diablo, and thanks to its open-source nature, it continues to evolve to this day.
 
